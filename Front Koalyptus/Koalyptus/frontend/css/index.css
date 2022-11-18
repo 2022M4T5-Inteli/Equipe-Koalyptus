@@ -1,0 +1,160 @@
+/*************CSS HOME PAGE**************/
+
+.background-img{
+    position: absolute;
+    Left: 0;
+    Right: 0;
+    Top: 0;
+    Bottom: 0;
+    Background-image: url(../images/forest-background.jpg);
+    Background-size: cover;
+    filter: blur(10px);
+    opacity: 100%;
+    
+}
+
+
+.container{
+    position: absolute;
+}
+
+
+/*Header Home Page*/
+.container .topbar {
+
+    /* background-color: #2a4213; */
+    opacity: 80%;
+    height: 13vh;
+    font-weight: 700;
+    display: flex;
+    /* border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px; */
+    align-items: center;
+    padding-left: 5rem;
+    font-size: 2.5rem;
+}
+
+/* Logo gerdau Home Page*/
+.container .topbar img {
+
+    height: 20vh;
+    margin-top: 23rem;
+    margin-left: 6rem;
+
+}
+
+
+/*Home Page Body*/
+.container main {
+
+    display: flex;
+    padding: 1rem 3.5rem 1rem 3.5rem;
+    text-align: justify;
+
+}
+
+.container main .left-side {
+
+    width: 60vw;
+
+}
+
+/*Título texto*/
+.container main .left-side .title {
+    
+    padding-top:15rem;
+    padding-left: 10rem;
+    font-size: 3.5rem;
+    color: white;
+
+}
+
+/*Texto*/
+.container main .left-side .subtitle {
+
+    font-size: 1.7rem;
+    padding-top: 2rem;
+    padding-left: 10rem;
+    padding-right: 20rem;
+    line-height: 3rem;
+    color: white;
+
+}
+
+/*Container Login*/
+.container main .right-side {
+
+    display: flex;
+    flex-direction: column;
+    background-color: #c1dfbd;  
+    opacity: 80%;
+    align-items: center;
+    border-radius: 15px;
+    height: 70vh;
+    width: 30vw;
+    padding: 5rem 2rem 5rem 2rem; 
+    color: #244205;
+    margin-top: 3rem;
+    min-width: 35rem;
+        
+
+}
+
+/*"Login"*/
+.container main .right-side p {
+
+    font-weight: 700;
+    font-size: 3.5rem;
+
+}
+
+/*Inputs e botão*/
+.container main .right-side form {
+
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    align-items: center;
+
+}
+
+/*Todos os inputs*/
+.container main .right-side form input {
+
+    margin-top: 5rem;
+    padding: 1rem;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    padding-left: 1rem;
+    width: 100%;
+
+}
+
+/*Input email*/
+.container main .right-side form input:first-child {
+
+margin-top: 3rem;
+
+}
+
+/*Botão Entrar*/
+.container main .right-side form a {
+
+    margin-top: 4rem;
+    padding: 1rem 4rem 1rem 4rem;
+    border-radius: 10px;
+    background-color: #244205;
+    color:white;
+    text-decoration: none;
+
+}
+
+/*Hover botão entrar*/
+.container main .right-side form a:hover {
+
+    transition: 0.4s;
+    background-color: #ccc;
+    color: #244205;
+
+}

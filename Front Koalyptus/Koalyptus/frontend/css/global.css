@@ -1,0 +1,42 @@
+/*************CSS APLICÁVEL PARA TODAS AS PÁGINAS**************/
+
+* {
+
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+        
+}
+
+input {
+
+    border: none;
+    outline: none;
+
+}
+
+.row {
+
+    display: flex;
+
+}
+
+.column {
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+a, button {
+
+    cursor: pointer;
+
+}
+
+:root {
+
+    font-size: 62.5%;
+
+}

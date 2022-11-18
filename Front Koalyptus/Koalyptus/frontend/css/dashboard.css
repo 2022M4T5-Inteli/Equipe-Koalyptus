@@ -1,0 +1,905 @@
+/************ CSS DASHBOARD ************/
+
+/* .background-img{
+  position: absolute;
+  Left: 0;
+  Right: 0;
+  Top: 0;
+  Bottom: 0;
+  Background-image: url(../images/forest-background.jpg);
+  Background-size: cover;
+  filter: blur(10px);
+  opacity: 100%;
+  
+} */
+
+
+span {
+
+  cursor: pointer;
+
+}
+
+body {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4rem 0 4rem;
+    overflow: hidden;
+}
+
+
+.container {
+
+    display: flex;
+    flex-direction: column;
+    width: 45vw;
+    height: 100vh;
+    padding: 3rem;
+    padding-left: 8rem;
+    background-color: #ffffff;
+    min-width: 80rem;
+
+}
+
+.container .summary {
+
+  border-radius: 16px;
+  padding: 2rem;
+  padding-left: 5rem;
+  padding-top: 4rem;
+  height: 35vh;
+  font-size: 1.2rem;
+  background-image: url(../images/back_dash.svg);
+  background-position: bottom;
+  background-size: cover;
+
+}
+
+.container .summary .title {
+    
+    font-weight: 700;
+    font-size: 2.7rem;
+
+}
+
+.container .summary .subtitle {
+
+    padding-top: 0.6rem;
+    font-size: 1.2rem;
+
+}
+
+.container .row {
+
+  margin-top: 0.7rem;
+  align-items: center;
+
+}
+
+.container .row p:not(.state) {
+
+  margin-left: 0.5rem;
+
+}
+
+.container .summary .summary-icon {
+
+    width: 1rem;
+
+}
+
+.container .summary #clock {
+
+    width: 1.2rem;
+    margin-left: -1px;
+
+}
+
+.container .summary .sync {
+
+    margin-left: 1rem;
+
+}
+
+.container .filter {
+
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+
+}
+
+.container .filter p {
+
+    font-size: 2rem;
+    font-weight: 700;
+
+}
+
+.container .filter input {
+
+    padding: 0.6rem;
+    border-radius: 5px;
+    background-color: #d4d4d4a9;
+
+}
+
+.container .grid {
+
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(4, 18rem);
+
+}
+
+.container .grid .stove:first-child {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.container .grid .stove .plus-sign {
+
+  width: 50%;
+  height: 60%;
+
+}
+
+.container .grid .stove {
+  
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  margin: 10px 10px 10px 10px;
+  border-radius: 12px;
+  border: 1px solid #63685e;
+  background-color: #89a86a49;
+}
+
+
+.container .grid .stove .state-caution {
+
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+}
+
+.container .grid .stove .state {
+
+  font-weight: 700;
+
+}
+
+.container .grid .stove .caution {
+
+  width: 4rem;
+
+}
+
+.container .grid .stove img {
+
+  width: 1rem;
+
+}
+
+.container .grid .stove .humidity_icon {
+
+  width: 1.4rem;
+  margin-left: -2px;
+
+}
+
+.container .grid .stove .stove-data {
+
+  font-size: 1.1rem;
+
+}
+
+/* Barrinha do lado da temperatura e umidade, precisa separar*/
+.container .grid .stove .color {
+
+  width: 3px;
+  height: 100%;
+  background-color: #DAAA2F;
+  border-radius: 16px;
+  margin-left: 5px;
+
+}
+
+.container .grid .stove .humidity_color {
+
+  width: 3px;
+  height: 100%;
+  background-color: #DAAA2F;
+  border-radius: 16px;
+  margin-left: 9px;
+
+}
+
+.container .grid .stove .temperature_color {
+
+  width: 3px;
+  height: 100%;
+  background-color: #DAAA2F;
+  border-radius: 16px;
+  margin-left: 5px;
+
+}
+
+
+.container .grid .stove .stove-name {
+
+  font-weight: 600;
+  padding-top: 0.5rem;
+
+}
+
+
+
+
+
+
+
+/* DESCRIÇÃO DA ESTUFA */
+
+.right-side-column {
+  display: none;
+  width: 50vw;
+  min-width: 650px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem;
+
+}
+
+.settings {
+
+  cursor: pointer;
+
+}
+
+.stove-desc {
+
+  width: 90%;
+  height: 640px;
+  /* height: 100%; */
+  border-radius: 16px;
+  background-color: #EFEFEF;
+  padding: 0 7rem 3rem 7rem;
+  margin-top: 1rem;
+
+}
+
+.settings {
+
+  position: relative;
+  right: -22rem;
+  bottom: 5rem;
+
+}
+
+.settings img {
+  width: 3rem;
+
+}
+
+.stove-desc .topbar .title img {
+
+  width: 8rem;
+  margin-right: 1.5rem;
+
+}
+
+.stove-desc .topbar .title .name {
+
+  font-size: 2.5rem;
+  padding-top: 1rem;
+
+}
+
+.stove-desc .topbar .title .state {
+
+  text-transform: uppercase;
+  font-size: 2rem;
+  
+}
+
+/*div do título da estufa*/
+.sensor{
+  margin-top: 1rem;
+}
+
+.stove-desc .topbar .title .name, 
+.stove-desc .topbar .title .state {
+
+  font-weight: 600;
+
+}
+
+.back {
+
+  font-size: 2.5rem;
+  display: flex;
+  height: 3.5rem;
+  position: relative;
+  width: 4rem;
+  top: -48.1rem;
+  right: -44rem;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: #ABABAB;
+  border-radius: 9px;
+
+}
+
+.chevron {
+
+  display: inline-block;
+  border-style: solid;
+  border-color: #000;
+  border-width: 3px 3px 0 0;
+  content: '';
+  min-height: 12px;
+  transform: rotate(225deg);
+  min-width: 12px;
+  cursor: pointer;
+  text-decoration: none;
+
+}
+
+.stove-desc .topbar .desc {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.stove-desc .topbar .desc-div {
+
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  margin-top: 1rem;
+
+}
+
+.stove-desc .topbar .desc-div .desc img {
+
+  width: 4rem;
+
+}
+
+.stove-desc .topbar .desc-div .desc .desc-title {
+
+  margin-top: 4px;
+  font-size: 1.2rem;
+  font-weight: 600;
+
+}
+
+.stove-desc .topbar .desc-div .desc .desc-data {
+
+  color: #9897AD;
+
+}
+
+.stove-desc .temperatura {
+
+  font-weight: 700;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  font-size:small;
+
+}
+
+.stove-desc .progress-div {
+
+  justify-content: space-evenly;
+
+}
+
+.stove-desc .progress-bar {
+
+  margin-top: -1rem;
+  width: 10rem;
+  height: 1.5rem;
+  background-color: #D9D9D9;
+  border-radius: 16px;
+  text-align: center;
+
+}
+
+.stove-desc .progress-bar p {
+
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding-top: 0.5rem;
+
+}
+
+.stove-desc .progress-bar .temperature-bar, .stove-desc .progress-bar .humidity-bar {
+
+  height: 100%;
+  border-radius: 16px;
+}
+
+.stove-desc .temperature-bar {
+
+  width: 100%;
+  background-color: #FFC36E;
+
+}
+
+.stove-desc .humidity-bar {
+
+  width: 100%;
+  background-color: rgba(225, 19, 19, 0.62);
+
+}
+
+.stove-desc .temperature-humidity {
+
+  justify-content: space-evenly;
+  margin-top: 1rem;
+  font-weight: 600;
+
+}
+
+.stove-desc .recommendation {
+
+  font-weight: 400;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+  text-align: center;
+
+}
+
+.stove-desc .confirm-div {
+
+  padding-top: 2rem;
+  align-items: center;
+  font-size: 1.1rem;
+}
+
+.stove-desc .confirm-div .confirm-button {
+
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  width: 14rem;
+  border-radius: 6px;
+  height: 3rem;
+  background-color: #31540f;
+  box-shadow: 0 8px 6px -6px black;
+  color: #E4E4E4;
+
+}
+
+.donwload-csv-div {
+
+  align-items: center;
+  margin-top: 4rem;
+  height: 1rem;
+  justify-content: center;
+
+}
+
+.donwload-csv {
+
+  box-shadow: 0 8px 6px -6px black;
+  padding: 0.8rem;
+  font-size: 1.2rem;
+  background-color: #31540f;
+  color: #E4E4E4;
+  border-radius: 6px;
+  text-decoration: none;
+
+}
+
+.logout {
+
+  display: flex;
+  padding: 0.6rem;
+  border-radius: 7px;
+  position: fixed;
+  right: 3rem;
+  top: 3rem;
+  background-color: #E4E4E4;
+
+}
+
+.logout img {
+
+  width: 2rem;
+  margin-left: 0.7rem;
+
+}
+
+.edit-modal-background {
+
+  display: none;  
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.modal-background {
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.create-modal-background {
+
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.modal-content {
+
+  width: 60vw;
+  height: 85vh;
+  background-color: #89a86a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.modal-content .topbar {
+
+  background-color: #89a86a;
+  height: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+
+.temperature-data {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-right: 2rem;
+  width: 220px;
+}
+
+.humidity-data{
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.modal-content p {
+
+  font-size: 3rem;
+  color: #fff;
+  margin-left: 2rem;
+
+}
+
+.modal-content span {
+
+  font-size: 4rem;
+  background-color: #fff;
+  padding: 4px;
+  height: 70%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+  border-radius: 8px;
+
+}
+
+.modal-content .column {
+
+  width: 70%;
+  margin-top: 2rem;
+
+}
+
+.modal-content .column p {
+
+  font-size: 1.3rem;
+  color: #000;
+  margin-top: 1rem;
+
+}
+
+.modal-content .column input {
+
+  border-radius: 7px;
+  margin-top: 0.5rem;
+  height: 3rem; 
+  padding-left: 1rem;
+
+}
+
+.modal-content .min-max {
+
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1.5rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+
+}
+
+.modal-content .intervals {
+
+  display: flex;
+  width: 70%;
+  justify-content: space-evenly;
+
+}
+
+.modal-content .min-max p {
+
+  color: #000;
+  text-align: center;
+  font-size: 1.2rem;
+
+}
+
+.modal-content .min-max .row {
+
+  justify-content: center;
+
+}
+
+.modal-content .min-max input {
+
+  width: 70%;
+  margin-top: 1rem;
+  height: 3.3rem;
+  border-radius: 10px;
+  padding-left: 1rem;
+  margin-left: 5px;
+  margin-right: 5px;
+
+}
+
+.modal-content .network {
+
+  margin-top: 0;
+  text-align: center;
+  justify-content: center;
+
+}
+
+.modal-content .network .row {
+
+  align-items: center;
+
+}
+
+.modal-content .network p {
+
+  padding-left: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 0.6rem;
+
+}
+
+.modal-content .network select,.modal-content .network input  {
+
+  height: 2.5rem;
+  border-radius: 7px;
+  margin-top: 0;
+  margin-left: 5px;
+  margin-right: 5px;
+
+}
+
+.buttons {
+
+  width: 100%;
+  padding-top: 3rem;
+  justify-content: center;
+
+}
+
+.confirm-cancel-button {
+
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.9rem;
+  padding-right: 0.9rem;
+  border-radius: 6px;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  background-color: #F9F9F9;
+  
+
+}
+
+.inputs {
+
+  width: 100%;
+  justify-content: center;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* The switch - the box around the slider */
+.switch1 {
+    position: relative;
+    display: inline-block;
+    width: 40px; /**/
+    height: 25px; /**/
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch1 input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider1 {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #83929b; /**/
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider1:before {
+    position: absolute;
+    content: "";
+    height: 18px; /**/
+    width: 18px; /**/
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider1 {
+    background-color: #3399cc; /**/
+  }
+  
+  input:focus + .slider1 {
+    box-shadow: 0 0 1px #3399cc; /**/
+  }
+  
+  input:checked + .slider1:before {
+    -webkit-transform: translateX(15px);/**/
+    -ms-transform: translateX(1px); /**/
+    transform: translateX(15px); /**/
+  }
+  
+  /* Rounded sliders */
+  .slider1.round1 {
+    border-radius: 34px;
+
+  }
+  
+  .slider1.round1:before {
+    border-radius: 50%;
+  }
+
+
+  /* The switch - the box around the slider */
+.switch2 {
+    position: relative;
+    display: inline-block;
+    width: 40px; /**/
+    height: 25px; /**/
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch2 input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider2 {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #83929b; /**/
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider2:before {
+    position: absolute;
+    content: "";
+    height: 18px; /**/
+    width: 18px; /**/
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider2 {
+    background-color: #3399cc; /**/
+
+}
+  
+  input:focus + .slider2 {
+    box-shadow: 0 0 1px #3399cc; /**/
+}
+  
+  input:checked + .slider2:before {
+    -webkit-transform: translateX(15px);/**/
+    -ms-transform: translateX(1px); /**/
+    transform: translateX(15px); /**/
+  }
+  
+  /* Rounded sliders */
+  .slider2.round2 {
+    border-radius: 34px;
+  }
+  
+  .slider2.round2:before {
+    border-radius: 50%;
+  }
