@@ -80,12 +80,14 @@ function temperatureProgressBar(lastTemperature) {
     //Essa variável pega o valor real (último lido) de temperatura, enviado pela função 
     let temp = lastTemperature;
 
-    /////////////CASOS DE TESTE://///////////
-    //let temp = 25;
-    //let temp = 32;
-    //let temp = 37.6;
-    //let temp = 38;
-    //let temp = 40;
+    /////////////CASOS DE TESTE TEMPERATURA://///////////
+    // Para testar, comente a variável let temp = lastTemperature; e descomente a que você deseja testar
+    
+    //let temp = 25; //temp baixa
+    //let temp = 32; //temp dentro do ideal 
+    //let temp = 37.6; //abrir 50%
+    //let temp = 38; //abrir 100%
+    //let temp = 40; //laterais e zenitais
 
 
     //variáveis para definir as cores
@@ -166,9 +168,11 @@ function humidityProgressBar(lastHumidity) {
     let humi = lastHumidity;
 
 
-    /////////////CASOS DE TESTE://///////////
-    //let humi = 90;
-    //let humi = 96;
+    /////////////CASOS DE TESTE UMIDADE://///////////
+    // Para testar, comente a variável let humi = lastHumidity; e descomente a que você deseja testar
+    //let humi = 50; //umi baixa
+    //let humi = 90; //umi dentro do ideal
+    //let humi = 96; //umi alta
 
 
     //Definindo as cores
