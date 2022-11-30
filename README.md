@@ -45,21 +45,29 @@ O projeto fornece acompanhamento com atualizações a cada minuto. Em cada casa 
 ## 💻Configuração para desenvolvimento
 
 ## 🗃 Histórico de lançamentos
-* data
-    * ;<br>
-    * <br>
-* data
-    * ;<br>
-    * <br>
-* data
-    * ;<br>
-    * <br>
-* <br>
-    * ;<br>
-    * <br>
-*  06/10/2022<br>
-    * ;<br>
-    * 
+* 21/10/2022
+   * Entendimento do negócio;
+   * Entendimento da experiência do usuário;
+   * Primeira versão da arquitetura da solução;
+* 04/11/2022
+   * Primeira versão do bloco central (hardware);
+   * Código fonte do sistema;
+   * Documentação das saídas;
+   * Segunda versão da arquitetura da solução;
+   * Protótipo de interface com o usuário;
+* 18/11/2022
+   * Segunda versão do bloco central e externos;
+   * Código fonte do sistema;
+   * Documentação das saídas e interações;
+   * Terceira versão da arquitetura da solução;
+* 02/12/2022
+   * Terceira versão do bloco central;
+   * Código fonte do sistema;
+   * Documentação das saídas, interações e respostas;
+*  16/12/2022
+   * Sistema completo construído (versão final);
+   * Versão final do código fonte do sistema;
+   * Documentação refinada e opcionais.
 
 ## 📋 Licença/License
 <img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/2022M4T5-Inteli/Projeto3">Koalyptos</a> <a>by</a> <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/InteliProjects/.github/blob/main/profile/README.md">Inteli, <a href="https://www.linkedin.com/in/eduardo-franca-porto/">Eduardo França Porto</a>, <a href="https://www.linkedin.com/in/l%C3%ADvia-bonotto-9064641a3/">Lívia Bonotto</a>, <a href="https://www.linkedin.com/in/luanadinamarcaparra/">Luana Dinamarca Parra</a>, <a href="https://www.linkedin.com/in/thomas-barton-80b854230/">Thomas Barton</a>, <a href="https://www.linkedin.com/in/victor-severiano-de-carvalho-b57a05237/">Victor Carvalho</a>, <a href="https://www.linkedin.com/in/yasminvit%C3%B3riarocha/">Yasmin Rocha</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution 4.0 International</a>.</p>
