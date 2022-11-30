@@ -19,10 +19,11 @@
 Tecnologia desenvolvida por alunos do módulo 4 do Instituto de Tecnologia e Liderança, o sistema Iot denominado Conway, visa automatizar o monitoramento da temperatura e umidade dentro das casas de vegetação de heucalipto, uma vez que, a vegetação apresenta grande vulnerabilidade e necessita de um controle constante e eficiente.
 
 ## 🔍 Problema
-Mortalidade de mudas de viveiro decorrentes das inadequações do ambiente e ausência de controle ágil.
+A coleta de dados de temperatura e umidade relativa do ar da casa de vegetação do viveiro de mudas da Gerdau Florestal, é feita em um intervalo de tempo de 1h em 1h por um operador e posteriormente tais dados são apontados em um sistema em nuvem, o que causa um aumento do risco de mortalidade de mudas de viveiro decorrentes de condições não ideais.
 
 ## 🔌Funcionamento
-O projeto fornece acompanhamento com atualizações a cada minuto. Em cada casa é instalado um sensor de acordo com a altura da muda, esse sensor capta dados sobre o estado do ambiente, medindo a temperatura e umidade. O acompanhamento é visualizado de maneira compreensiva através de uma interface web que contém um dashboard com todo o histórico de atualizações feitas por meio da captação de dados do sensor, além de possibilitar receber e enviar alertas para a tomada de decisão rápida de abertura das janelas reguladoras do viveiro.
+O projeto fornece o acompanhamento com atualizações a cada minuto, por meio de um sensor que capta dados sobre o estado do ambiente, medindo a temperatura e umidade, em cada casa de vegetação instalado um sensor de acordo com a altura da muda.
+Por fim, o acompanhamento é visualizado de maneira compreensiva através de uma interface web que contém um dashboard com todo o histórico de atualizações feitas por meio da captação de dados do sensor, além de possibilitar receber e enviar alertas para a tomada de decisão rápida de abertura das janelas reguladoras do viveiro.
 
 ## 🛠 Estrutura de pastas
 -Raiz<br>
