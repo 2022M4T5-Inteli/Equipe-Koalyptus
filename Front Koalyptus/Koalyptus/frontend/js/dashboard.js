@@ -33,6 +33,8 @@ function getDataToJson(jsonString) {
   temperatureProgressBar(lastTemperature);
   humidityProgressBar(lastHumidity);
   showDate(lastDate);
+  makeInactive(lastTemperature, lastHumidity);
+
 
 }
 
@@ -362,5 +364,15 @@ function changeStoveTriangle(values){
 
     }
 
+}
+
+// Função para o caso de uma estufa inativa - front não recebe os dados
+// Ainda em desenvolvimento
+function makeInactive(lastTemperature,lastHumidity){
+    if (lastTemperature == undefined || lastHumidity == undefined){
+        console.log("inativo");
+    }
+
+    console.log(lastHumidity);
 }
 
