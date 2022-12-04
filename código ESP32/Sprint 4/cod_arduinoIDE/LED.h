@@ -1,4 +1,4 @@
-//Definição das portas dos LEDs
+// Definição das portas dos LEDs
 #define tempLED 37
 #define umiLED 36
 #define statusLEDR 19
@@ -7,53 +7,71 @@
 
 int ledTimer = 300;
 
-void ledSetup(){
-  pinMode(tempLED, OUTPUT); //LED de temperatura
-  pinMode(umiLED, OUTPUT); //LED de umidade
-  pinMode(statusLEDR, OUTPUT); //LED de vermelho do RGB de status
-  pinMode(statusLEDG, OUTPUT); //LED de verde do RGB de status
-  pinMode(statusLEDB, OUTPUT); //LED de azul do RGB de status
+void ledSetup()
+{
+  pinMode(tempLED, OUTPUT);    // LED de temperatura
+  pinMode(umiLED, OUTPUT);     // LED de umidade
+  pinMode(statusLEDR, OUTPUT); // LED de vermelho do RGB de status
+  pinMode(statusLEDG, OUTPUT); // LED de verde do RGB de status
+  pinMode(statusLEDB, OUTPUT); // LED de azul do RGB de status
 }
 
-//Ascende os LEDs conforme o status de temperatura, umidade e erro
-void changeLED(int t, int u, int timer){
-  if(t == 1){
-    if(int((timer/ledTimer))%2 == 1){
+// Acende os LEDs conforme o status de temperatura, umidade e erro
+void changeLED(int t, int u, int timer)
+{
+  // Condição que define o estado do LED para status de temperatura
+  if (t == 1)
+  {
+    if (int((timer / ledTimer)) % 2 == 1)
+    {
       digitalWrite(tempLED, HIGH);
     }
-    else{
+    else
+    {
       digitalWrite(tempLED, LOW);
     }
   }
-  if(u == 1){
-    if(int((timer/ledTimer))%2 == 1){
+
+  // Condição que define o estado do LED para status de umidade
+  if (u == 1)
+  {
+    if (int((timer / ledTimer)) % 2 == 1)
+    {
       digitalWrite(umiLED, HIGH);
     }
-    else{
+    else
+    {
       digitalWrite(umiLED, LOW);
     }
   }
-  if(t == 2 || u == 2){
-    if(int((timer/ledTimer))%2 == 1){
+
+  // Condição que define o estado do LED RGB
+  if (t == 2 || u == 2)
+  {
+    if (int((timer / ledTimer)) % 2 == 1)
+    {
       digitalWrite(statusLEDR, LOW);
       digitalWrite(statusLEDG, LOW);
       digitalWrite(statusLEDB, LOW);
     }
-    else{
+    else
+    {
       digitalWrite(statusLEDR, HIGH);
       digitalWrite(statusLEDG, HIGH);
       digitalWrite(statusLEDB, LOW);
     }
   }
-  if(t <= 1 && u <= 1){
+  if (t <= 1 && u <= 1)
+  {
     digitalWrite(statusLEDR, LOW);
     digitalWrite(statusLEDG, HIGH);
     digitalWrite(statusLEDB, LOW);
   }
 }
 
-//Apaga todos os LEDs
-void resetLED(){
+// Função que apaga todos os LEDs
+void resetLED()
+{
   digitalWrite(tempLED, LOW);
   digitalWrite(umiLED, LOW);
 }
