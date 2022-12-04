@@ -1,6 +1,3 @@
-<!--DASHBOARD GERAL: DASHBOARD + STATUS + MODAL -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,10 +9,11 @@
     <meta name="viewport" content="width=device-width, user-scalabe=no">
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/dashboard.css">
-    <script src="../js/dashboard.js"></script>
+    <script src="../dashboard.js"></script>
     <title>Document</title>
 </head>
 <body onload="stovesCount(), temperatureProgressBar(), humidityProgressBar(), myItems()">
+    <!-- <div class="background-img"></div> -->
     <div class="row">
         <div class="container">
             <div class="summary">
@@ -52,10 +50,10 @@
                 <input type="text" class="filter-input" placeholder="Filtrar estufa" onchange="filter()">
             </div>
             <div class="grid">
-                <button class="stove" onclick="addStove()">
+                <button class="stove" id="stove1" onclick="addStove()">
                     <img src="../images/plus-sign.svg" class="plus-sign" alt="" srcset="">
                 </button>
-                <button class="stove" id="stove1" onclick="StoveDesc(this.id)">
+                <button class="stove" onclick="StoveDesc(this.id)">
                     <div class="row state-caution">
                         <p class="state">Ativo</p>
                         <img src="../images/warning_triangle.svg" class="caution" alt="" srcset="">
@@ -72,7 +70,7 @@
                     </div>
                     <p class="stove-name">Estufa 1</p>
                 </button>
-                <button class="stove estufa2" id="stove2" onclick="StoveDesc(this.id)">
+                <button class="stove estufa2" id="stove2"onclick="StoveDesc(this.id)">
                     <div class="row state-caution">
                         <p class="state">Inativo</p>
                     </div>
@@ -239,8 +237,7 @@
                         </div>
 
                         <div class="row donwload-csv-div">
-                            <!-- <button type="submit" class="donwload-csv" onclick="">Baixar arquivo .CSV</button> -->
-                            <a class="donwload-csv" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSE82OYNU_lzd6f_PV-R3e7xDe8BCqDGomQ0b7JKlRSrJrbEd8-KHmJ6RCrREJKnmU-r9kXTLdr31mK/pub?output=csv">Baixar arquivo .CSV</a>
+                            <button type="submit" class="donwload-csv" onclick="">Baixar arquivo .CSV</button>
                         </div>
                     </div>
                     <button class="back" onclick="closeDescPage()">
@@ -267,19 +264,28 @@
                 <p>Espécie</p>
                 <input type="text" placeholder="Insira aqui a espécie">
             </div>
+            
+           <!-- Essa função POST esta na caixa <form> e é colocada direto no código html. 
+            Apartir de um script feito dentro da planilha do google sheets é possível pegar 
+        esses dados que foram colocado nos campos que possuem o nome temp_min/max e umi_min/max e enviar direto para a planilha-->
+        <!--Link da planilha  https://docs.google.com/spreadsheets/d/1Io-X6PDaMXhqI2EH-OOi0zhz55x3ldh6YN-cQXCW7OI/edit#gid=0 -->    
+        <form 
+            method="POST" 
+            action="https://script.google.com/macros/s/AKfycbyx4m4qOMGkgzoC0vb1Ke_RV5FgsazxFauzEe9Stbqt__1UQ2VIvAsbALPXZkB_K5873w/exec"
+            >
             <div class="row intervals">
                 <div class="min-max">
                     <p>Temperatura</p>
                     <div class="row">
-                        <input type="text" placeholder="Min">
-                        <input type="text" placeholder="Máx">
+                        <input type="text" name="temp_min" placeholder="Min">
+                        <input type="text" name="temp_max" placeholder="Máx">
                     </div>
                 </div>
                 <div class="min-max">
                     <p>Umidade</p>
                     <div class="row">
-                        <input type="text" placeholder="Min">
-                        <input type="text" placeholder="Máx">
+                        <input type="text" name="umi_min" placeholder="Min">
+                        <input type="text" name="umi_max" placeholder="Máx">
                     </div>
                 </div>
                 <div class="min-max">
@@ -303,6 +309,7 @@
             </div>
         </div>
     </div>
+</form>
     <div class="edit-modal-background">
         <div class="modal-content">
             <div class="topbar">
@@ -318,18 +325,22 @@
                 <input type="text" placeholder="Insira aqui a espécie">
             </div>
             <div class="row intervals">
+                <form 
+                method="POST" 
+                action="https://script.google.com/macros/s/AKfycbyx4m4qOMGkgzoC0vb1Ke_RV5FgsazxFauzEe9Stbqt__1UQ2VIvAsbALPXZkB_K5873w/exec"
+                >
                 <div class="min-max">
                     <p>Temperatura</p>
                     <div class="row">
-                        <input type="text" placeholder="Min">
-                        <input type="text" placeholder="Máx">
+                        <input type="text" placeholder="Min" name="temp_min">
+                        <input type="text" placeholder="Máx"name="temp_max">
                     </div>
                 </div>
                 <div class="min-max">
                     <p>Umidade</p>
                     <div class="row">
-                        <input type="text" placeholder="Min">
-                        <input type="text" placeholder="Máx">
+                        <input type="text" placeholder="Min" name="umi_min">
+                        <input type="text" placeholder="Máx" name="umi_max">
                     </div>
                 </div>
                 <div class="min-max">
@@ -352,6 +363,7 @@
                 <button onclick="" class="confirm-cancel-button">Adicionar</button>
             </div>
         </div>
+    </form>
     </div>
 </body>
 </html>
