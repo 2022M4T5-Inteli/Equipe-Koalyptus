@@ -7,9 +7,9 @@
 const char* serverSsid = "Koalyptus";
 const char* serverPassword = "koalaslyptus";
 
+//Inicia a conexão WiFi
 int wifiSetup(){
   int wifiOnOff;
-
 
   WiFi.mode(WIFI_STA);
   WiFi.softAP(serverSsid, serverPassword); //Conexão wifi
@@ -21,11 +21,12 @@ int wifiSetup(){
   const char* wifiSsidChar = wifiSsid.c_str();
   const char* wifiPasswordChar = wifiPassword.c_str();
 
-  WiFi.begin(wifiSsidChar, wifiPasswordChar); //Conexão wifi
+  WiFi.begin(wifiSsidChar, wifiPasswordChar); //Identificação dos parâmetros
   Serial.println("conecting wifi");
   delay(5000);
+  //Verifica se o status é conectado
   if (WiFi.status() != WL_CONNECTED) {
-    Serial.println("ERR_03");
+    Serial.println("ERR_03"); //Caso exista algum erro, o código mostrará “ERR_03”
     wifiOnOff = 0;
   }
   else{
