@@ -113,7 +113,11 @@ function temperatureProgressBar(lastTemperature) {
     let text = document.querySelector('.temperature-data .recommendation');
     let temperatureValue = document.querySelector('.t-progress-bar p');
     let tempCardBar = document.querySelector('.temperature_color');
-    
+    let minTemperature = document.getElementsByName('temp_min').value;
+    let maxTemperature = document.getElementsByName('temp_max').value;
+    let t_min = document.querySelector('.t-min');
+    let t_max = document.querySelector('.t-max');
+
     //Essa variável pega o valor real (último lido) de temperatura, enviado pela função 
     let temp = lastTemperature;
 
@@ -124,6 +128,9 @@ function temperatureProgressBar(lastTemperature) {
     //let temp = 38;
     //let temp = 40;
 
+    //Substitui os valores de min e max no html
+    t_min.innerHTML = minTemperature;
+    t_max.innerHTML = maxTemperature;
 
     //variáveis para definir as cores
     let color;
@@ -133,7 +140,7 @@ function temperatureProgressBar(lastTemperature) {
 
 
     //fazendo as condições
-    if (temp > 0 && temp <= 26.6) {
+    if (temp > 0 && temp <= (minTemperature * 0.95)) {
         
         color = red;
         text.innerHTML = "Alerta: Temperatura BAIXA.";
@@ -141,32 +148,37 @@ function temperatureProgressBar(lastTemperature) {
 
     }
 
-    else if (temp > 26.6 && temp < 37.08) {
+    else if (temp > (minTemperature * 0.95) && temp < (maxTemperature * 1.03)) {
 
         color = green;
         text.innerHTML = "Temperatura dentro do ideal.";
         value_temp = 0;
 
     }
-    else if (temp >= 37.08 && temp < 37.8) {
+    else if (temp >= (maxTemperature * 1.03) && temp < (maxTemperature * 1.05)) {
 
         color = yellow;
         text.innerHTML = "Alerta: Temperatura ALTA, abrir 50% das janelas laterais.";
         value_temp = -1;
     }
-    else if (temp >= 37.8 && temp < 39.6) {
+    else if (temp >= (maxTemperature * 1.05) && temp < (maxTemperature * 1.1)) {
 
         color = yellow;
         text.innerHTML = "Alerta: Temperatura ALTA, abrir 100% das janelas laterais";
         value_temp = -1;
 
     }
-    else if (temp >= 39.6) {
+    else if (temp >= (maxTemperature * 1.1)) {
 
         color = red;
         text.innerHTML = "Alerta: Temperatura ALTA, abrir janelas zenitais e laterais.";
         value_temp = 1;
-
+    }
+    // Erro de recebimento dos dados, falta terminar 
+    else {
+        color = red;
+        text.innerHTML = "Erro: falha no recebimento dos dados. Possíveis erros: ";
+        value_temp = 2; //arrumar isso 
     }
 
     //Enviando os dados para o front
@@ -187,8 +199,6 @@ function temperatureProgressBar(lastTemperature) {
 }
 
 
-
-
 //Função para enviar o valor da umidade para a aba da estufa, 
 // Altera a cor da barra de "progresso" e a mensagem de recomendação de acordo com a leitura
 function humidityProgressBar(lastHumidity) {
@@ -197,11 +207,17 @@ function humidityProgressBar(lastHumidity) {
     let text = document.querySelector('.humidity-data .recommendation');
     let humidityValue = document.querySelector('.u-progress-bar p');
     let humCardBar = document.querySelector('.humidity_color');
-
+    let minUmidity = document.getElementsByName('umi_min').value;
+    let maxUmidity = document.getElementsByName('umi_max').value;
+    let u_min = document.querySelector('.u-min');
+    let u_max = document.querySelector('.u-max');
 
     //Essa variável pega o valor real (último lido) de temperatura, enviado pela função 
     let humi = lastHumidity;
 
+    //Substitui os valores de min e max no html
+    u_min.innerHTML = minUmidity;
+    u_max.innerHTML = maxUmidity;
 
     /////////////CASOS DE TESTE://///////////
     //let humi = 90;
@@ -215,26 +231,31 @@ function humidityProgressBar(lastHumidity) {
 
 
     //Fazendo as condições
-    if (humi <= 73.5) {
+    if (humi > 0 && humi <= (minUmidity * 0.95)) {
 
         color = red;
         text.innerHTML = "Alerta: Umidade Relativa BAIXA.";
         value_hum = 1;
 
     }
-    else if (humi > 73.5 && humi < 95) {
+    else if (humi > (minUmidity * 0.95) && humi < maxUmidity) {
 
         color = green;
         text.innerHTML = "Alerta: Umidade Relativa dentro do ideal.";
         value_hum = 0;
 
     }
-    else if (humi >= 95) {
+    else if (humi >= (maxUmidity)) {
 
         color = red;
         text.innerHTML = "Alerta: Umidade Relativa ALTA.";
         value_hum = 1;
-
+    }
+    //Erro no recebimento dos dados - falta terminar
+    else {
+        color = red;
+        text.innerHTML = "Erro: falha no recebimento dos dados. Possíveis erros: ";
+        value_hum = 2;
     }
 
     //Enviando os dados para o front
@@ -256,6 +277,30 @@ function humidityProgressBar(lastHumidity) {
         humid: null,
         temp: null
     }
+
+}
+
+
+function changeMinMaxHTML(){
+    let minUmidity = document.getElementsByName('umi_min').value;
+    let maxUmidity = document.getElementsByName('umi_max').value;
+    let u_min = document.querySelector('.u-min');
+    let u_max = document.querySelector('.u-max');
+    let minTemperature = document.getElementsByName('temp_min').value;
+    let maxTemperature = document.getElementsByName('temp_max').value;
+    let t_min = document.querySelector('.t-min');
+    let t_max = document.querySelector('.t-max');
+
+    //Substitui os valores de min e max no html
+    // u_min.innerHTML = minUmidity;
+    // u_max.innerHTML = maxUmidity;
+    // t_min.innerHTML = minTemperature;
+    // t_max.innerHTML = maxTemperature;
+    u_min.innerHTML = "10";
+    u_max.innerHTML = "20";
+    t_min.innerHTML = "30";
+    t_max.innerHTML = 40;
+
 
 }
 

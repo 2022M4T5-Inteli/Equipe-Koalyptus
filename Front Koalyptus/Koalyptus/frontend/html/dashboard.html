@@ -209,24 +209,24 @@
                             <div class="column temperature-data">
                                 <p class="temperatura">Temperatura</p>
                                 <div class="row progress-div">
-                                    26.6°C
+                                    <p class="t-min">T Min</p>
                                     <div class="progress-bar t-progress-bar">
                                         <div class="temperature-bar"></div>
-                                        <p>34.6°C</p>
+                                        <p>T Atual</p>
                                     </div>
-                                    39.6°C
+                                    <p class="t-max">T Max</p>
                                 </div>
-                                <p class="recommendation">Alerta: Temperatura ALTA, abrir 50% das janelas laterais.</p>
+                                <p class="recommendation">Recomendação</p>
                             </div>
                             <div class="column humidity-data">
                                 <p class="temperatura">Umidade Relativa</p>
                                 <div class="row progress-div">
-                                    73.5%
+                                    <p class="u-min">U Min</p>
                                     <div class="progress-bar u-progress-bar">
                                         <div class="humidity-bar"></div>
-                                        <p>84.2%</p>
+                                        <p>U atual</p>
                                     </div>
-                                    95%
+                                    <p class="u-max">U Max</p>
                                 </div>
                                 <p class="recommendation">Umidade relativa próxima do limite.</p>
                             </div>
@@ -359,8 +359,8 @@
                 </div>
             </div>
             <div class="row buttons">
-                <button onclick="" class="confirm-cancel-button">Cancelar</button>
-                <button onclick="" class="confirm-cancel-button">Adicionar</button>
+                <button onclick="closeCreateModal()" class="confirm-cancel-button">Cancelar</button>
+                <button onclick="changeMinMaxHTML()" class="confirm-cancel-button">Adicionar</button>
             </div>
         </div>
     </form>
