@@ -32,14 +32,11 @@ Por fim, o acompanhamento é visualizado de maneira compreensiva através de uma
 &emsp; &emsp;**|-->** Front-end<br>
 &emsp; &emsp;**|-->** Back-end<br>
 &emsp;**|-->** Código ESP32<br>
-&emsp; &emsp;**|-->** Componente1<br>
-&emsp; &emsp;**|-->** Componente2<br>
-&emsp; &emsp;**|-->** Componente3<br>
-&emsp; &emsp;**|-->** Componente4<br>
-&emsp; &emsp;**|-->** Componente5<br>
-&emsp; &emsp;**|-->** Componente6<br>
+&emsp; &emsp;**|-->** Sprint 5/Código Arduino IDE<br>
+&emsp; &emsp;**|-->** Antigos<br>
 &emsp;**|-->** Documentação<br>
-&emsp; &emsp;**|-->** Sprint5<br>
+&emsp; &emsp;**|-->** Documentação Sprint5<br>
+&emsp; &emsp;**|-->** Antigos<br>
 **|-->** .gitignore<br>
 **|-->** README.md<br>
 
