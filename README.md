@@ -27,11 +27,11 @@ Por fim, o acompanhamento é visualizado de maneira compreensiva através de uma
 
 ## 🛠 Estrutura de pastas
 -Raiz<br>
-**|-->** Documentos<br>
+**|-->** Códigos<br>
 &emsp;**|-->** Interface Web<br>
 &emsp; &emsp;**|-->** Front-end<br>
 &emsp; &emsp;**|-->** Back-end<br>
-&emsp;**|-->** Código ESP32<br>
+&emsp;**|-->** Código embarcado<br>
 &emsp; &emsp;**|-->** Sprint 5/Código Arduino IDE<br>
 &emsp; &emsp;**|-->** Antigos<br>
 &emsp;**|-->** Documentação<br>
@@ -45,7 +45,9 @@ Por fim, o acompanhamento é visualizado de maneira compreensiva através de uma
 
 <b>readme:</b> arquivo que serve como guia e explicação geral sobre o projeto (o mesmo que você está lendo agora).
 
-<b>documentos:</b> aqui estarão todos os documentos do projeto. Há também uma pasta denominada 'antigos' onde estão presentes versões anteriores do documento. 
+<b>documentação:</b> aqui estarão todos os documentos do projeto. Há também uma pasta denominada 'antigos' onde estão presentes versões anteriores do documento. 
+
+<b>códigos:</b> aqui estarão todos os códigos comentados do projeto. Há também uma pasta denominada 'antigos' onde estão presentes versões anteriores dos códigos. 
 
 ## 💻Configuração para desenvolvimento
 Aqui encontram-se todas as instruções necessárias para a instalação de todos os programas, bibliotecas e ferramentas imprescindíveis para a configuração do ambiente de desenvolvimento.
