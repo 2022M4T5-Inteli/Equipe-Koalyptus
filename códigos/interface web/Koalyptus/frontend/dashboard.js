@@ -482,7 +482,7 @@ function downloadCSV() {
 }
 
 function sendIP(){
-    alert("Endereço para configuração: 192.168.4.1 \nLembre-se se estar conectado à rede do dispositivo. \n\nNome: Koalyptus \nSenha: koalaslyptus");
+    alert("Endereço para configuração: 192.168.4.1 \nLembre-se de estar conectado à rede do dispositivo. \n\nNome: Koalyptus \nSenha: koalaslyptus");
 }
 
 
