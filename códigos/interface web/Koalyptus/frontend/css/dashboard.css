@@ -1,18 +1,5 @@
 /************ CSS DASHBOARD ************/
 
-/* .background-img{
-  position: absolute;
-  Left: 0;
-  Right: 0;
-  Top: 0;
-  Bottom: 0;
-  Background-image: url(../images/forest-background.jpg);
-  Background-size: cover;
-  filter: blur(10px);
-  opacity: 100%;
-  
-} */
-
 
 span {
 
@@ -32,14 +19,16 @@ body {
 
 .container {
 
-    display: flex;
-    flex-direction: column;
-    width: 45vw;
-    height: 100vh;
-    padding: 3rem;
-    padding-left: 8rem;
-    background-color: #ffffff;
-    min-width: 80rem;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  height: 100vh;
+  padding: 3rem;
+  padding-top: 1rem;
+  padding-left: 8rem;
+  background-color: #ffffff;
+  min-width: 80rem;
 
 }
 
@@ -49,6 +38,7 @@ body {
   padding: 2rem;
   padding-left: 5rem;
   padding-top: 4rem;
+  margin-top: 3rem;
   height: 35vh;
   font-size: 1.2rem;
   background-image: url(../images/back_dash.svg);
@@ -150,7 +140,7 @@ body {
 
 }
 
-.container .grid .stove {
+#add-stove {
   
   display: flex;
   flex-direction: column;
@@ -161,6 +151,28 @@ body {
   background-color: #cfcfcf51;
 }
 
+.stove1:focus {
+  
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  margin: 10px 10px 10px 10px;
+  border-radius: 12px;
+  border: 1px solid #63685e;
+  box-shadow: 3px 3px 8px #63685e;
+}
+
+
+.stove1 {
+  
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  margin: 10px 10px 10px 10px;
+  border-radius: 12px;
+  border: 1px solid #63685e;
+  background-color: #cfcfcf51;
+}
 
 .container .grid .stove .state-caution {
 
@@ -250,9 +262,10 @@ body {
 
 .right-side-column {
   display: none;
-  width: 50vw;
-  min-width: 650px;
+  width: 45vw;
+  height: 100vh;
   flex-direction: column;
+  margin-right: 80px;
   align-items: center;
   justify-content: center;
   padding: 2.5rem;
@@ -269,7 +282,6 @@ body {
 
   width: 90%;
   height: 640px;
-  /* height: 100%; */
   border-radius: 16px;
   background-color: #EFEFEF;
   padding: 0 7rem 3rem 7rem;
@@ -323,6 +335,7 @@ body {
 
 }
 
+/*botão fechar modal*/
 .back {
 
   font-size: 2.5rem;
@@ -330,8 +343,8 @@ body {
   height: 3.5rem;
   position: relative;
   width: 4rem;
-  top: -48.1rem;
-  right: -44rem;
+  top: 2rem;
+  right: -10rem;
   justify-content: center;
   align-items: center;
   padding: 1rem;
@@ -439,15 +452,13 @@ body {
 .stove-desc .temperature-bar {
 
   width: 100%;
-  background-color: #FFC36E;
+  background-color: white;
 
 }
 
 .stove-desc .humidity-bar {
 
   width: 100%;
-  background-color: rgba(225, 19, 19, 0.62);
-
 }
 
 .stove-desc .temperature-humidity {
@@ -488,7 +499,7 @@ body {
 
 }
 
-.donwload-csv-div {
+.download-csv-div {
 
   align-items: center;
   margin-top: 4rem;
@@ -497,7 +508,7 @@ body {
 
 }
 
-.donwload-csv {
+.download-csv {
 
   box-shadow: 0 8px 6px -6px black;
   padding: 0.8rem;
@@ -505,6 +516,15 @@ body {
   background-color: #31540f;
   color: #E4E4E4;
   border-radius: 6px;
+  text-decoration: none;
+
+}
+
+.download-csv:hover, .confirm-div a:hover .confirm-button {
+
+  transition: 0.6s;
+  color: #31540f;
+  background-color: #E4E4E4;
 
 }
 
@@ -586,9 +606,11 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
 
+.modal-content .topbar p {
+  padding-left: 2rem;
+}
 
 .temperature-data {
   background-color: #fff;
@@ -612,6 +634,7 @@ body {
 
   font-size: 3rem;
   color: #fff;
+  
 
 }
 
@@ -702,8 +725,11 @@ body {
 .modal-content .network {
 
   margin-top: 0;
+  display: flex;
   text-align: center;
   justify-content: center;
+  align-items: center;
+  padding-top: 3rem;
 
 }
 
@@ -734,9 +760,47 @@ body {
 .buttons {
 
   width: 100%;
-  padding-top: 3rem;
   justify-content: center;
 
+}
+
+.set-config {
+
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.9rem;
+  padding-right: 0.9rem;
+  border-radius: 6px;
+  margin-left: 2rem;
+  width: 150px;
+  margin-right: 2rem;
+  background-color: #31540f;
+  color: #CFCED5;
+  box-shadow: 10px, 10px, 30px, black;
+
+}
+
+.set-config:hover {
+
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.9rem;
+  padding-right: 0.9rem;
+  border-radius: 6px;
+  margin-left: 2rem;
+  width: 150px;
+  margin-right: 2rem;
+  background-color: #D9D9D9;
+  color: #31540f;
+  transition: 0.4s;
+  box-shadow: 3px, 3px, 8px, grey;
+
+  
+}
+
+.set-config-p {
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 .confirm-cancel-button {
@@ -760,7 +824,17 @@ body {
 
 }
 
+/* Form */
 
+form {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+
+}
 
 
 

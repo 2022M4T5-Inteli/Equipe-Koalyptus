@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, user-scalabe=no">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <script src="../dashboard.js"></script>
+    <title>Dashboard Koalyptus - Gerdau</title>
+
+
+    
+    <!--FAZ A PÁGINA ATUALIZAR A CADA QUANTIDADE DE TEMPO-->
+    <!--Para alterar o intervalo: altere em "content" e coloque a quantidade em segundos-->
+    <!-- <meta id="timer-update" http-equiv="refresh" content="60"> -->
+
+
+
+
+</head>
+<body onload="">
+    <div class="row">
+        <div class="container">
+            <div class="summary">
+                <p class="title">Bom te ver aqui!</p>
+                <p class="subtitle">Consulte aqui os dados dos sensores</p>
+                <div class="row">
+                    <img class="summary-icon" id="clock" src="../images/clock.png" />
+                    <p class="date">Última medição</p>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        Sincronizar intervalo
+                        <label class="switch1">
+                            <input type="checkbox">
+                            <span class="slider1 round1"></span>
+                        </label>
+                    </div>
+                    <div class="sync column">
+                        Sincronizar faixas
+                        <label class="switch2">
+                            <input type="checkbox">
+                            <span class="slider2 round2"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row filter">
+                <p>Estufas</p>
+                <input type="text" class="filter-input" placeholder="Filtrar estufa" onchange="filter()">
+            </div>
+
+            <div class="grid">
+
+                
+                <button class="stove" id="add-stove" onclick="">
+                    <img src="../images/plus-sign.svg" class="plus-sign" alt="" srcset="">
+                </button>
+
+
+                <button class="stove stove1" onclick="StoveDesc()">
+                    <div class="row state-caution">
+                        <p class="state">Status</p>
+                        <img src="" class="caution" alt="" srcset="">
+                    </div>
+                    <div class="row">
+                        <img class="stove-img" src="../images/thermometer.svg" alt="">
+                        <p class="stove-data card-temp">T°C</p>
+                        <div class="color temperature_color"></div>
+                    </div>
+                    <div class="row">
+                        <img class="stove-img humidity_icon" src="../images/humidity_icon.svg" alt="">
+                        <p class="stove-data card-umi">U%</p>
+                        <div class="color humidity_color"></div>
+                    </div>
+                    <p class="stove-name">Id Estufa</p>
+                </button>
+                </div>
+
+
+    
+            </div>
+            <div class="right-side-column">
+                <div class="stove-desc">
+                    <div class="topbar">
+                        <div class="row title sensor">
+                            <img src="../images/warning_triangle.svg" class="desc-triangle" alt="">
+                            <div class="column">
+                                <div class="row title">
+                                    <p class="name">Sensor Estufa 1</p>
+                                    <button class="back" onclick="closeDescPage()">
+                                        &times;
+                                    </button>
+                                </div>
+                                <p class="state">Ativo</p>
+                            </div>
+                        </div>
+                        <div class="row desc-div">
+                            <div class="desc">
+                                <img src="../images/house.png"/>
+                                <p class="desc-title">Local</p>
+                                <p class="desc-data">indefinido</p>
+                            </div>
+                            <div class="desc">
+                                <img src="../images/sensor.png"/>
+                                <p class="desc-title">Sensor</p>
+                                <p class="desc-data">indefinido</p>
+                            </div>
+                            <div class="desc">
+                                <img src="../images/plant.png"/>
+                                <p class="desc-title">Espécie</p>
+                                <p class="desc-data">indefinido</p>
+                            </div>
+                            <div class="desc">
+                                <img src="../images/clock3h.png"/>
+                                <p class="desc-title">Última atualização</p>
+                                <p class="desc-data hour">indefinido</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="row temperature-humidity">
+                            <div class="column temperature-data">
+                                <p class="temperatura">Temperatura</p>
+                                <div class="row progress-div">
+                                    <p class="t-min"></p>
+                                    <div class="progress-bar t-progress-bar">
+                                        <div class="temperature-bar bars"></div>
+                                        <p>T Atual</p>
+                                    </div>
+                                    <p class="t-max"></p>
+                                </div>
+                                <p class="recommendation text">Recomendação</p>
+                            </div>
+                            <div class="column humidity-data">
+                                <p class="temperatura">Umidade Relativa</p>
+                                <div class="row progress-div">
+                                    <p class="u-min">U Min</p>
+                                    <div class="progress-bar u-progress-bar">
+                                        <div class="humidity-bar bars"></div>
+                                        <p>U atual</p>
+                                    </div>
+                                    <p class="u-max">U Max</p>
+                                </div>
+                                <p class="recommendation text">Recomendação.</p>
+                            </div>
+                        </div>
+                        <div class="column confirm-div">
+                            <p>Enviar confirmação.</p>
+                            <a href="https://api.whatsapp.com/send?phone=5511974627106&text=Hora%3A%20XX%3AXX%20Temperatura%3A%20X%C2%BAC%20Umidade%3A%20X%25%20Alerta%3A%20temperatura%20alta%2C%20abrir%20janelas%20em%20X%25"><button onclick="sendConfirm()" class="confirm-button">Enviar confirmação</button></a>
+                        </div>
+
+                        <div class="row download-csv-div">
+                            <a onclick="downloadCSV()" class="download-csv" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSE82OYNU_lzd6f_PV-R3e7xDe8BCqDGomQ0b7JKlRSrJrbEd8-KHmJ6RCrREJKnmU-r9kXTLdr31mK/pub?output=csv">Baixar arquivo .CSV</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="settings">
+                    <img src="../images/settings.png" onclick="editModal()" alt="" srcset="">
+                </div>
+                
+            </div>
+        </div>
+
+    <div class="edit-modal-background">
+        <div class="modal-content">
+            <div class="topbar">
+                <p>Editar Dispositivo</p>
+                <span onclick="closeEditModal()">&times;</span>
+            </div>
+            <form>
+            <div class="column">
+                <p style="color: grey;">Identificação estufa</p>
+                <input type="text" style="background-color: #8080805b" placeholder="Insira aqui a identificação da estufa" name="greenhouse_id">
+                <p style="color: grey;">Código sensor</p>
+                <input type="text" style="color: #808080b2; background-color: #8080805b" placeholder="Insira aqui o código" name="sensor_id">
+                <p style="color: grey;">Espécie</p>
+                <input type="text" style="color: #808080b2; background-color: #8080805b" placeholder="Insira aqui a espécie" name="specie">
+            </div>
+            <div class="row intervals">
+                <div class="min-max">
+                    <p style="color: grey;">Temperatura</p>
+                    <div class="row">
+                        <input type="text" style="background-color: #8080805b" placeholder="Min" name="temp_min">
+                        <input type="text" style="background-color: #8080805b" placeholder="Máx"name="temp_max">
+                    </div>
+                </div>
+                <div class="min-max">
+                    <p style="color: grey;">Umidade</p>
+                    <div class="row">
+                        <input type="text" style="background-color: #8080805b" placeholder="Min" name="umi_min">
+                        <input type="text" style="background-color: #8080805b" placeholder="Máx" name="umi_max">
+                    </div>
+                </div>
+                <div class="min-max">
+                    <p style="color: grey;">Intervalo medição</p>
+                    <div class="row">
+                        <input type="text" style="background-color: #8080805b" placeholder="Min" name="interval_min">
+                        <input type="text" style="background-color: #8080805b" placeholder="Seg" name="interval_sec">
+                    </div>
+                </div>
+            </div>
+
+            <div class="column  network">
+                <button type="button" onclick="sendIP()" class="set-config">Configurar Embarcado</button>
+                <p class="set-wifi-p">Atenção: para Configurar, é necessário estar com o computador conectado à rede própria do dispositivo.</p>
+            </div>
+            
+            <div class="row buttons">
+                <button type="button" onclick="closeEditModal()" class="confirm-cancel-button">Cancelar</button>
+                <button rel="nofollow" onclick="closeEditModal()" class="confirm-cancel-button">Confirmar</button>
+            </div>
+
+        </div>
+    </form>
+
+</div>
+</body>
+</html>
